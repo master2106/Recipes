@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.vlad.recipes.MainActivity">
+
+    <ImageButton
+        android:id="@+id/btn_menu"
+        android:layout_width="@android:dimen/notification_large_icon_width"
+        android:layout_height="@android:dimen/notification_large_icon_height"
+        android:layout_above="@+id/btn_diets"
+        android:layout_alignStart="@+id/btn_diets"
+        android:layout_marginBottom="39dp"
+        android:background="@drawable/ic_menu" />
+
+    <ImageButton
+        android:id="@+id/btn_fridge"
+        android:layout_width="@android:dimen/notification_large_icon_width"
+        android:layout_height="@android:dimen/notification_large_icon_height"
+        android:layout_alignBottom="@+id/btn_menu"
+        android:layout_alignStart="@+id/btn_favorite"
+        android:background="@drawable/ic_fridge"
+        android:onClick="openFridge" />
+
+    <ImageButton
+        android:id="@+id/all_recipes"
+        android:layout_width="@android:dimen/notification_large_icon_width"
+        android:layout_height="@android:dimen/notification_large_icon_height"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="24dp"
+        android:layout_marginStart="34dp"
+        android:background="@drawable/ic_search"
+        android:onClick="openAllRecipes"/>
+
+    <ImageButton
+        android:id="@+id/btn_diets"
+        android:layout_width="@android:dimen/notification_large_icon_width"
+        android:layout_height="@android:dimen/notification_large_icon_height"
+        android:layout_alignBottom="@+id/all_recipes"
+        android:layout_marginStart="22dp"
+        android:layout_toEndOf="@+id/all_recipes"
+        android:background="@drawable/ic_diets"
+        android:onClick="openDiets" />
+
+    <ImageButton
+        android:id="@+id/btn_favorite"
+        android:layout_width="@android:dimen/notification_large_icon_width"
+        android:layout_height="@android:dimen/notification_large_icon_height"
+        android:layout_alignBottom="@+id/btn_diets"
+        android:layout_toEndOf="@+id/btn_diets"
+        android:layout_marginStart="18dp"
+        android:background="@drawable/ic_favorite"
+        android:onClick="openFavoriteRecipes" />
+
+    <ImageButton
+        android:id="@+id/basket"
+        android:layout_width="@android:dimen/notification_large_icon_width"
+        android:layout_height="@android:dimen/notification_large_icon_height"
+        android:layout_alignBottom="@+id/btn_favorite"
+        android:layout_toEndOf="@+id/btn_favorite"
+        android:layout_marginStart="18dp"
+        android:background="@drawable/ic_basket"
+        android:onClick="openBasket"/>
+
+</RelativeLayout>
