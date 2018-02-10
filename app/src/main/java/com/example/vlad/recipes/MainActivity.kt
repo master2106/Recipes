@@ -1,5 +1,6 @@
 package com.example.vlad.recipes
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.database.sqlite.SQLiteOpenHelper
 import android.support.v7.app.AppCompatActivity
@@ -10,11 +11,11 @@ import com.example.vlad.recipes.database.RecipesDatabaseHelper
 
 class MainActivity : AppCompatActivity() {
 
+    @SuppressLint("WrongConstant", "Recycle")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         try {
-            println("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
             val dbHelper: SQLiteOpenHelper = RecipesDatabaseHelper(this)
             val db = dbHelper.writableDatabase
 
@@ -22,7 +23,7 @@ class MainActivity : AppCompatActivity() {
 
 //            cursor.moveToFirst()
             println(cursor.count)
-        } catch(ex: Exception){
+        } catch (ex: Exception) {
             val toast: Toast = Toast.makeText(this, "Database is unavailable", Toast.LENGTH_SHORT)
             toast.show()
             println(ex.message)
@@ -46,12 +47,12 @@ class MainActivity : AppCompatActivity() {
         startActivity(allDiets)
     }
 
-    fun openFavoriteRecipes(view: View){
+    fun openFavoriteRecipes(view: View) {
         val favoriteRecipes = Intent(this, FavoriteRecipesActivity::class.java)
         startActivity(favoriteRecipes)
     }
 
-    fun openBasket(view: View){
+    fun openBasket(view: View) {
         val basket = Intent(this, BasketActivity::class.java)
         startActivity(basket)
     }
